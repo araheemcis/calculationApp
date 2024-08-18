@@ -5,8 +5,13 @@
 replicaCount: 1
 
 image:
+<<<<<<< HEAD
    repository: araheemcis/calculationapp
    tag: latest
+=======
+   repository: araheemcis/calculationApp
+   tag: 28
+>>>>>>> refs/remotes/origin/main
 
 
 
