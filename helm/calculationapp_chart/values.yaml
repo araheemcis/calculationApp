@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-   repository: araheemcis/calculationApp
+   repository: araheemcis/calculationapp
    tag: latest
 
 
