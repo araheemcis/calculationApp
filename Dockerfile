@@ -1,2 +1,2 @@
-FROM quay.io/wildfly/wildfly:27.0.0.Final-jdk11
-COPY target/calculationApp.war /opt/jboss/wildfly/standalone/deployments/
+FROM jboss/wildfly:18.0.0.Final
+COPY target/calculatorApp.war /opt/jboss/wildfly/standalone/deployments/
