@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: calculationappingress
+  namespace: default
+  annotations:
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "ingress-lb-1037274142.us-east-1.elb.amazonaws.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/calculationApp/"
+        backend:
+          service:
+            name: calculationapp
+            port:
+              number: 8080
+      
+
+
