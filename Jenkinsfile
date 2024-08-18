@@ -46,5 +46,26 @@ pipeline {
         }
       }
     }
-  }
+    stage('Update the tag in helm'){
+      environment {
+            GIT_REPO_NAME = "calculationApp"
+            GIT_USER_NAME = "araheemcis"
+        }
+        steps {
+            withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]){
+                   
+             sh '''
+                    echo passed
+                    git config user.email "araheemcis@gmail.com"
+                    git config user.name "Abdul Raheem"
+                    BUILD_NUMBER=${BUILD_NUMBER}
+                    sed -i 's/tag: .*/tag: '${BUILD_NUMBER}'/'  'helm/calculation_chart/values.yaml'                    
+                    git add helm/calculator_chart/values.yaml
+                    git commit -m "Update helm chart_tag ${BUILD_NUMBER}"
+                    git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+                '''
+              }
+            }
+         }
+    }
 }
