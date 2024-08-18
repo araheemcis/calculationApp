@@ -54,7 +54,7 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]){
                    
-                sh '''
+             sh '''
                     echo passed
                     git clone 'https://github.com/araheemcis/calculationApp.git'                    
                     git config user.email "araheemcis@gmail.com"
@@ -64,9 +64,9 @@ pipeline {
                     git add helm/calculator_chart/values.yaml
                     git commit -m "Update helm chart_tag ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
-                    '''
-                  }
-               }
-           }
-  }
+                '''
+              }
+            }
+         }
+    }
 }
