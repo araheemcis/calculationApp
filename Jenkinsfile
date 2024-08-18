@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "araheemcis/calculationApp:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "araheemcis/calculationapp:${BUILD_NUMBER}"
         // DOCKERFILE_LOCATION = "Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
