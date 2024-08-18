@@ -56,7 +56,7 @@ pipeline {
                    
                 sh '''
                     echo passed
-                    git branch: 'main', url: 'https://github.com/araheemcis/calculationApp.git'                    
+                    git clone 'https://github.com/araheemcis/calculationApp.git'                    
                     git config user.email "araheemcis@gmail.com"
                     git config user.name "Abdul Raheem"
                     BUILD_NUMBER=${BUILD_NUMBER}
