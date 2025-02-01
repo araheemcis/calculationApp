@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: calculationapp
-        image: araheemcis/calculationapp:2
+        image: araheemcis/calculationapp:26
         ports:
         - containerPort: 8000
 
