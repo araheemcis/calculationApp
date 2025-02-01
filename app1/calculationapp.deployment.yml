@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculationapp--deployment
+  labels:
+    app: calculationapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: calculationapp
+  template:
+    metadata:
+      labels:
+        app: calculationapp
+    spec:
+      containers:
+      - name: calculationapp
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 8000
+
