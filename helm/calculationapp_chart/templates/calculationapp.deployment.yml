@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: calculationapp--deployment
+  name: calculationapp2--deployment
   labels:
     app: calculationapp
 spec:
