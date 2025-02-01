@@ -14,7 +14,7 @@ spec:
         path: "/calculationApp/"
         backend:
           service:
-            name: calculationapp
+            name: calculationapp2
             port:
               number: 8080
       
